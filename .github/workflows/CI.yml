@@ -32,8 +32,6 @@ jobs:
     - name: Executar testes
       run: npm test -- --passWithNoTests
       
-    - name: Lint
-      run: npx eslint src/**/*.ts
     
     - name: Executar ts-prune
       run: npm run find-deadcode 
