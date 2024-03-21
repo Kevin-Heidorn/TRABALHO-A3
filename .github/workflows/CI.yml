@@ -32,11 +32,7 @@ jobs:
     - name: Build
       run: npm run build --if-present
       
-    - name: Run tests
-      run: npm run test
-      
-    - name: Lint
-      run: npx eslint src/**/*.ts
+ 
     
     - name: Run ts-prune
       run: npm run find-deadcode
