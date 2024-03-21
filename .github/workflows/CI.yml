@@ -35,8 +35,7 @@ jobs:
     - name: Lint
       run: npx eslint src/**/*.ts
     
-    - name: Executar ts-prune
-      run: npm run find-deadcode 
+
 
     - name: Executar ts-prune com código ignorado
       run: |
