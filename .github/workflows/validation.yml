@@ -9,6 +9,9 @@ jobs:
   validate-commits:
     runs-on: ubuntu-latest
 
+    env:
+      NODE_OPTIONS: --require=timers-promises/auto
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -19,10 +22,7 @@ jobs:
           node-version: '14'
 
       - name: Install Dependencies
-        run: |
-          npm install @commitlint/cli @commitlint/config-conventional
-          npm install timers-promises
+        run: npm install @commitlint/cli @commitlint/config-conventional
 
       - name: Validate Commits
-        run: |
-          npx commitlint --from=main --to=HEAD
+        run: npx commitlint --from=main --to=HEAD
