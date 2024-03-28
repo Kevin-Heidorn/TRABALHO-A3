@@ -19,9 +19,7 @@ jobs:
           node-version: '14'
 
       - name: Install Dependencies
-        run: |
-          npm install @commitlint/cli @commitlint/config-conventional
-          npm install timers-promises
+        run: npm install @commitlint/cli @commitlint/config-conventional
 
       - name: Validate Commits
         run: |
