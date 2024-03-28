@@ -9,20 +9,20 @@ jobs:
   validate-commits:
     runs-on: ubuntu-latest
 
+    env:
+      NODE_OPTIONS: "--experimental-modules --loader ts-node/esm --loader ./loaders/enable-timers.mjs"
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-
+      
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '14'
 
       - name: Install Dependencies
-        run: |
-          npm install @commitlint/cli @commitlint/config-conventional
-          npm install timers-promises
+        run: npm install @commitlint/cli @commitlint/config-conventional
 
       - name: Validate Commits
-        run: |
-          npx commitlint --from=main --to=HEAD
+        run: npx commitlint --from=main --to=HEAD
