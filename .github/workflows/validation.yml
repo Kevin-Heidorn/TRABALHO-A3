@@ -25,4 +25,5 @@ jobs:
 
       - name: Validate Commits
         run: |
+          require('timers-promises');
           npx commitlint --from=main --to=HEAD
