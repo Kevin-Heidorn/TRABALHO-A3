@@ -3,7 +3,7 @@ name: Validate Commits
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-
+ 
 jobs:
   validate:
     name: Validate Commits
